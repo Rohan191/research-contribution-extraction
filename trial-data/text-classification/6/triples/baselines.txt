@@ -1,0 +1,13 @@
+(Contribution||has||Baselines)
+(Baselines||For||word level transfer)
+(word level transfer||from sentece||For word level transfer , we use word embeddings from a word2 vec skip - gram model trained on a corpus of news data .
+The pretrained word embeddings are included as input to two model types : a convolutional neural network models ( CNN ) ; a DAN .)
+(word level transfer||use||word embeddings from a word2 vec skip - gram model)
+(word embeddings from a word2 vec skip - gram model||trained on||corpus)
+(corpus||of||news data)
+(word embeddings from a word2 vec skip - gram model||input to||convolutional neural network models)
+(convolutional neural network models||has acronym||CNN)
+(word embeddings from a word2 vec skip - gram model||input to||DAN)
+(Baselines||has||Additional baseline)
+(Additional baseline||has||CNN and DAN models)
+(CNN and DAN models||are trained without using||pretrained word or sentence embeddings)

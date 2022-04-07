@@ -1,0 +1,8 @@
+{
+  "has research problem" : [
+    ["Neural Machine Translation", {"from sentence" : "TITLE"}],
+    ["NMT", {"from sentence" : "Neural machine translation ( NMT ) aims at solving machine translation ( MT ) problems using neural networks and has exhibited promising results in recent years ."}],
+    ["machine translation", {"from sentence" : "Neural machine translation ( NMT ) aims at solving machine translation ( MT ) problems using neural networks and has exhibited promising results in recent years ."}],
+    ["MT", {"from sentence" : "Neural machine translation ( NMT ) aims at solving machine translation ( MT ) problems using neural networks and has exhibited promising results in recent years ."}]    
+  ]
+}

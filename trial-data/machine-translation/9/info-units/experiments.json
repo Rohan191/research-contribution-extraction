@@ -1,0 +1,230 @@
+{
+  "has" : {
+    "Experiments" : {
+      "has" : {
+        "CODE LEARNING" : {
+          "has" : {
+            "Experimental setup" : {
+              "small batch of the embeddings" : {
+                "sampled uniformly" : {
+                  "from" : "baseline embedding matrix"
+                },
+                "from sentence" : "In each iteration , a small batch of the embeddings is sampled uniformly from the baseline embedding matrix ."
+              },
+              "batch size" : ["128", {"from sentence" : "In our experiments , the batch size is set to 128 ."}],
+              "use" : {
+                "Adam optimizer" : {
+                  "with" : {
+                    "fixed learning rate" : {
+                      "of" : "0.0001"
+                    }
+                  }
+                },
+                "from sentence" : "We use Adam optimizer with a fixed learning rate of 0.0001 ."
+              },
+              "training" : ["200K iterations", {"from sentence" : "The training is run for 200K iterations ."}],
+              "distribute" : {
+                "model training" : {
+                  "GPUs" : "4",
+                  "using" : "nccl package"
+                },
+                "from sentence" : "We evenly distribute the model training to 4 GPUs using the nccl package , so that one round of code learning takes around 15 minutes to complete ."
+              }
+            }
+          }
+        },
+        "SENTIMENT ANALYSIS" : {
+          "has" : {
+            "Architecture" : {
+              "composed of" : {
+                "single LSTM layer" : {
+                  "with" : "150 hidden units"
+                },
+                "softmax layer" : {
+                  "for predicting" : "binary label" 
+                },
+                "from sentence" : "The model is composed of a single LSTM layer with 150 hidden units and a softmax layer for predicting the binary label ."
+              },
+              "for" : {
+                "baseline model" : {
+                  "contains" : {
+                    "large 75 K 300 embedding matrix" : {
+                      "initialized by" : "GloVe embeddings"
+                    }
+                  },
+                  "from sentence" : "For the baseline model , the embedding layer contains a large 75 K 300 embedding matrix initialized by GloVe embeddings ."
+                },
+                "compressed models" : {
+                  "based on" : {
+                    "compositional coding" : {
+                      "maintains" : {
+                        "matrix" : {
+                          "of" : "basis vectors"
+                        }
+                      }
+                    }
+                  },
+                  "from sentence" : "For the compressed models based on the compositional coding , the embedding layer maintains a matrix of basis vectors ."  
+                }
+              },
+              "remain fixed" : {
+                "embedding parameters" : {
+                  "during" : "training"
+                },
+                "from sentence" : "The embedding parameters for both models remain fixed during the training ."
+              },
+              "finetuned" : {
+                "sparse embedding matrix" : {
+                  "during" : "training",
+                  "for" : {
+                    "models" : {
+                      "with" : "network pruning"
+                    }
+                  }
+                },
+                "from sentence" : "For the models with network pruning , the sparse embedding matrix is finetuned during training ."
+              }
+            },
+            "Hyperparameters" : {
+              "trained with" : {
+                "Adam optimizer" : {
+                  "for" : "15 epochs",
+                  "with" : {
+                    "fixed learning rate" : {
+                      "of" : "0.0001"
+                    }
+                  }
+                },
+                "from sentence" : "The models are trained with Adam optimizer for 15 epochs with a fixed learning rate of 0.0001 ."
+              }
+            },
+            "Results" : {
+              "achieved by" : {
+                "16 32 coding scheme" : {
+                  "maximum loss - free" : "compression rate"
+                },
+                "from sentence" : "For our proposed methods , the maximum loss - free compression rate is achieved by a 16 32 coding scheme ."
+              },
+              "substantially improved" : {
+                "classification accuracy" : {
+                  "with" : "slightly lower compression rate"
+                },
+                "from sentence" : "We also found the classification accuracy can be substantially improved with a slightly lower compression rate ."
+              }
+            }
+          }
+        },
+        "MACHINE TRANSLATION" : {
+          "has" : {
+            "Architecture" : {
+              "has" : {
+                "standard bi-directional encoder" : {
+                  "composed of" : "two LSTM layers"
+                },
+                "from sentence" : "The model has a standard bi-directional encoder composed of two LSTM layers similar to ."
+              },
+              "contains" : {
+                "two" : {
+                  "LSTM layers" : "decoder"
+                },
+                "from sentence" : "The decoder contains two LSTM layers ."
+              },
+              "applied" : {
+                "Residual connection" : {
+                  "with" : {
+                    "scaling factor" : {
+                      "of" : "1 / 2"
+                    }
+                  },
+                  "to" : "two decoder states"
+                },
+                "from sentence" : "Residual connection with a scaling factor of 1 / 2 is applied to the two decoder states to compute the outputs ."
+              },
+              "All LSTMs and embeddings" : {
+                "hidden units" : {
+                  "256" : "IWSLT14 task",
+                  "1000" : "ASPEC task"
+                },
+                "from sentence" : "All LSTMs and embeddings have 256 hidden units in the IWSLT14 task and 1000 hidden units in ASPEC task ."
+              },
+              "linearly transformed" : {
+                "to 600 - dimensional vectors" : {
+                  "before computing" : "final softmax"
+                },
+                "from sentence" : "The decoder states are firstly linearly transformed to 600 - dimensional vectors before computing the final softmax ."
+              },
+              "Dropout" : {
+                "rate of 0.2" : {
+                  "applied" : {
+                    "everywhere" : {
+                      "except" : "recurrent computation"
+                    }
+                  }
+                },
+                "from sentence" : "Dropout with a rate of 0.2 is applied everywhere except the recurrent computation ."
+              },
+              "apply" : {
+                "Key - Value Attention" : {
+                  "to" : "first decoder"
+                },
+                "from sentence" : "We apply Key - Value Attention to the first decoder , where the query is the sum of the feedback embedding and the previous decoder state and the keys are computed by linear transformation of encoder states ."
+              }
+            },
+            "Experimental setup" : {
+              "trained by" : {
+                "Nesterov 's accelerated gradient" : {
+                  "with" : {
+                    "initial learning rate" : {
+                      "of" : "0.25"
+                    }
+                  }
+                },
+                "from sentence" : "All models are trained by Nesterov 's accelerated gradient with an initial learning rate of 0.25 ."
+              },
+              "distributed" : {
+                "training" : {
+                  "GPUs" : [
+                    "4", 
+                    {"computes" : {"mini-batch" : "16 samples"}}
+                  ]
+                },
+                "from sentence" : "Similar to the code learning , the training is distributed to 4 GPUs , each GPU computes a mini-batch of 16 samples ."
+              }
+            },
+            "Results" : {
+              "on" : {
+                "ASPEC dataset" : {
+                  "by pruning" : {
+                    "90 % of the connections" : {
+                      "loss - free compression rate" : "reaches 92 %"
+                    }
+                  }
+                },
+                "from sentence" : "The loss - free compression rate reaches 92 % on ASPEC dataset by pruning 90 % of the connections ."              
+              },
+              "in" : {
+                "IWSLT14 dataset" : {
+                  "observed" : "modest performance loss"
+                },
+                "from sentence" : "However , with the same pruning ratio , a modest performance loss is observed in IWSLT14 dataset ."
+              },
+              "using" : {
+                "compositional coding" : {
+                  "loss - free compression rate" : {
+                    "94 %" : {
+                    "for" : "IWSLT14 dataset" 
+                    },
+                    "99 %" : {
+                      "for" : "ASPEC dataset"
+                    }
+                  }
+                },
+                "from sentence" : "For the models using compositional coding , the loss - free compression rate is 94 % for the IWSLT14 dataset and 99 % for the ASPEC dataset ."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

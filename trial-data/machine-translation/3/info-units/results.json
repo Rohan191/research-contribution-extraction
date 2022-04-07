@@ -1,0 +1,38 @@
+{
+  "has" : {
+    "Results" : {
+      "has" : {
+        "Single models" : {
+          "has" : {
+            "English - to - French" : {
+              "From" : {
+                "Deep - ED" : {
+                  "obtain" : {
+                    "BLEU score" : {
+                      "of" : {
+                        "36.3" : {
+                          "outperforms" : {
+                            "Enc - Dec model" : {
+                              "by" : "4.8 BLEU points"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "from sentence" : "From Deep - ED , we obtain the BLEU score of 36.3 , which outperforms Enc - Dec model by 4.8 BLEU points ."                    
+              },
+              "for" : {
+                "Deep - Att" : {
+                  "performance is further improved" : "37.7"
+                },
+                "from sentence" : "For Deep - Att , the performance is further improved to 37.7 ."                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

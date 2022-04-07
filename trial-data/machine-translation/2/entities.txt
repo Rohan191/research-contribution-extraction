@@ -1,0 +1,131 @@
+50	15	26	composed of
+50	29	60	stack of N = 6 identical layers
+51	15	29	two sub-layers
+52	4	9	first
+52	15	52	multi-head self - attention mechanism
+52	63	69	second
+52	75	135	simple , positionwise fully connected feed - forward network
+53	3	9	employ
+53	12	31	residual connection
+53	32	38	around
+53	51	65	two sub-layers
+53	68	79	followed by
+53	80	99	layer normalization
+57	20	31	composed of
+57	34	65	stack of N = 6 identical layers
+58	70	77	inserts
+58	80	97	third sub - layer
+58	106	114	performs
+58	115	135	multi-head attention
+58	136	140	over
+58	145	172	output of the encoder stack
+59	28	34	employ
+59	35	55	residual connections
+59	56	62	around
+59	63	85	each of the sub-layers
+59	88	99	followed by
+59	100	119	layer normalization
+60	8	14	modify
+60	19	47	self - attention sub - layer
+60	48	50	in
+60	55	68	decoder stack
+60	72	79	prevent
+60	80	128	positions from attending to subsequent positions
+63	29	41	described as
+63	42	88	mapping a query and a set of key - value pairs
+63	89	91	to
+63	95	101	output
+63	104	109	where
+64	14	25	computed as
+64	28	54	weighted sum of the values
+64	67	96	weight assigned to each value
+64	100	111	computed by
+64	114	149	compatibility function of the query
+64	150	154	with
+64	159	176	corresponding key
+103	86	94	contains
+103	97	135	fully connected feed - forward network
+103	147	157	applied to
+103	158	198	each position separately and identically
+104	5	13	consists
+104	17	43	two linear transformations
+104	44	48	with
+104	51	66	ReLU activation
+110	53	56	use
+110	57	75	learned embeddings
+110	76	86	to convert
+110	91	121	input tokens and output tokens
+110	10	12	to
+111	16	72	usual learned linear transformation and softmax function
+111	73	83	to convert
+111	88	102	decoder output
+111	73	75	to
+111	106	142	predicted next - token probabilities
+115	134	140	inject
+115	141	157	some information
+115	158	163	about
+115	168	197	relative or absolute position
+115	95	97	of
+118	0	22	tokens in the sequence
+119	17	20	add
+119	23	43	positional encodings
+119	46	48	to
+119	53	69	input embeddings
+119	70	87	at the bottoms of
+119	92	118	encoder and decoder stacks
+161	3	10	trained
+161	15	21	models
+161	22	24	on
+161	25	36	one machine
+161	37	41	with
+161	42	60	8 NVIDIA P100 GPUs
+163	15	26	base models
+163	27	30	for
+163	32	66	total of 100,000 steps or 12 hours
+165	4	14	big models
+165	28	31	for
+165	32	58	300,000 steps ( 3.5 days )
+167	3	7	used
+167	12	26	Adam optimizer
+167	27	31	with
+167	32	66	? 1 = 0.9 , ? 2 = 0.98 and = 10 ?9
+170	8	20	warmup_steps
+170	21	22	=
+170	23	27	4000
+173	0	16	Residual Dropout
+174	3	8	apply
+174	9	16	dropout
+174	17	19	to
+174	24	50	output of each sub - layer
+174	91	93	in
+175	38	89	sums of the embeddings and the positional encodings
+175	93	128	both the encoder and decoder stacks
+177	0	15	Label Smoothing
+178	21	29	employed
+178	49	63	value ls = 0.1
+6	80	100	attention mechanisms
+22	41	125	push the boundaries of recurrent language models and encoder - decoder architectures
+30	44	191	model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output
+182	47	49	on
+182	7	54	WMT 2014 English - to - German translation task
+182	110	121	outperforms
+182	122	181	the best previously reported models ( including ensembles )
+182	182	184	by
+182	185	203	more than 2.0 BLEU
+182	206	218	establishing
+182	224	246	state - of - the - art
+182	247	257	BLEU score
+182	261	265	28.4
+186	7	54	WMT 2014 English - to - French translation task
+186	71	79	achieves
+186	82	100	BLEU score of 41.0
+186	103	116	outperforming
+186	117	162	all of the previously published single models
+215	78	86	performs
+215	87	104	surprisingly well
+215	107	115	yielding
+215	116	130	better results
+215	131	135	than
+215	136	166	all previously reported models
+215	167	185	with the exception
+215	193	225	Recurrent Neural Network Grammar

@@ -1,0 +1,7 @@
+{
+  "has research problem" : [
+    ["Machine Reading", {"from sentence" : "TITLE"}],
+    ["machine comprehension", {"from sentence" : "We propose a novel neural attention architecture to tackle machine comprehension tasks , such as answering Cloze - style queries with respect to a document ."}],
+    ["answering Cloze - style queries with respect to a document", {"from sentence" : "We propose a novel neural attention architecture to tackle machine comprehension tasks , such as answering Cloze - style queries with respect to a document ."}]
+  ] 
+}
